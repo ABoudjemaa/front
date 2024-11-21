@@ -1,14 +1,19 @@
-import { Button } from "./components/ui/button"
+import { Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import ModulesPage from "./pages/ModulesPage";
+import RootLayout from "./Layouts/RootLayout";
+import NoPage from "./pages/NoPage";
 
-function App() {
-
+const App = () => {
   return (
-    <>
-      <div>
-        <Button>test </Button>
-      </div>
-    </>
-  )
-}
+    <Routes>
+      <Route path="/" element={<RootLayout />}>
+        <Route index element={<LoginPage />} />
+        <Route path="modules" element={<ModulesPage />} />
+        <Route path="*" element={<NoPage />} />
+      </Route>
+    </Routes>
+  );
+};
 
-export default App
+export default App;
