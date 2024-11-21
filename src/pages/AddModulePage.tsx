@@ -19,7 +19,7 @@ const AddModulePage = () => {
     }
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/modules", {
+      const response = await fetch(`http://127.0.0.1:8000/api/modules`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +45,7 @@ const AddModulePage = () => {
   };
 
   return (
-    <div className="min-h-screen-hero flex justify-center items-center bg-gray-100 p-6">
+    <div className="flex justify-center items-center min-h-screen-hero bg-gray-100 p-6">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
         <h1 className="text-2xl font-semibold text-center mb-6">Add Module</h1>
         <form onSubmit={handleSubmit}>

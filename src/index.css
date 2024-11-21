@@ -68,5 +68,5 @@
 
 
 .min-h-screen-hero{
-  min-height: calc(100vh - 72px);
+  min-height: calc(100vh - 72px - 52px);
 }
