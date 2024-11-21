@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
@@ -8,6 +8,14 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
+
+  const token = localStorage.getItem("authToken");
+
+  useEffect(() => {
+    if (token) {
+      navigate("/modules");
+    }
+  }, [token, navigate]);
 
   const handleLogin = async () => {
     try {
