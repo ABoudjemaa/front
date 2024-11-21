@@ -24,12 +24,17 @@ const Navbar = () => {
             </Link>
           ) : (
             // If token exists, show the logout button
-            <button
-              onClick={handleLogout}
-              className="text-white px-4 py-2 rounded hover:bg-blue-700"
-            >
-              Logout
-            </button>
+            <>
+              <Link to="/add-module" className="text-white px-4 py-2 rounded hover:bg-blue-700">
+                Add Module
+              </Link>
+              <button
+                onClick={handleLogout}
+                className="text-white px-4 py-2 rounded hover:bg-blue-700"
+              >
+                Logout
+              </button>
+            </>
           )}
         </div>
       </div>
