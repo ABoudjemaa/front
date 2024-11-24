@@ -19,7 +19,7 @@ const AddModulePage = () => {
     }
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/modules`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/modules`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

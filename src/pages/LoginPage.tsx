@@ -12,6 +12,7 @@ const LoginPage = () => {
   const token = localStorage.getItem("authToken");
 
   useEffect(() => {
+    console.log(import.meta.env.VITE_API_URL);
     if (token) {
       navigate("/modules");
     }

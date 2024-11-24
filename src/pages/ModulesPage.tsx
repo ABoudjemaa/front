@@ -12,7 +12,7 @@ const ModulesPage = () => {
     if (!token) {
       navigate("/modules");
     } else {
-      fetch(`${import.meta.env.VITE_API_BASE_URL}/modules`, {
+      fetch(`${import.meta.env.VITE_API_URL}/modules`, {
         headers: { "Authorization": `Bearer ${localStorage.getItem("authToken")}` },
       })
         .then((response) => response.json())

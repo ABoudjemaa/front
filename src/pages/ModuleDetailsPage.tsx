@@ -11,7 +11,7 @@ const ModuleDetailsPage = () => {
     } | null>(null);
 
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_BASE_URL}/modules/${id}`, {
+        fetch(`${import.meta.env.VITE_API_URL}/modules/${id}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` },
         })
             .then((response) => response.json())
