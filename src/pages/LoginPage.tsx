@@ -21,7 +21,7 @@ const LoginPage = () => {
   const handleLogin = async () => {
     try {
       // Send login request to your backend API
-      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/login_check`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/login_check`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
