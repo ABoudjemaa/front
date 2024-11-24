@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 
 const ModuleDetailsPage = () => {
     const { id } = useParams<{ id: string }>();
-    console.log(id);
     const [module, setModule] = useState<{
         id: number;
         title: string;
@@ -12,7 +11,7 @@ const ModuleDetailsPage = () => {
     } | null>(null);
 
     useEffect(() => {
-        fetch(`http://127.0.0.1:8000/api/modules/${id}`, {
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/modules/${id}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` },
         })
             .then((response) => response.json())
